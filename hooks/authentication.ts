@@ -12,7 +12,6 @@ async function createUserIfNotFound(user: User) {
   const userRef = firebase.firestore().collection('users').doc(user.uid)
   const doc = await userRef.get()
   if (doc.exists) {
-    // 書き込みの方が高いので！
     return
   }
 
